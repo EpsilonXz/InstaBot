@@ -5,7 +5,7 @@ class InstaBot():
     def __init__(self, username, pw):
         self.username = username
         self.pw = pw
-        self.driver = webdriver.Chrome(executable_path=r'C:\\Users\\97254\\OneDrive\\Desktop\\chromedriver_win32\\chromedriver.exe')
+        self.driver = webdriver.Chrome(executable_path=r'path_to_Geckodriver')
         self.driver.get('https://www.instagram.com')
         time.sleep(2)
         self.driver.find_element_by_xpath("//input[@name='username']").send_keys(username)#enter username 
@@ -60,6 +60,8 @@ class InstaBot():
                 self.driver.find_element_by_xpath("/html/body/div[5]/div/div/div/div[3]/button[1]").click()#click are you sure you want to unfollow
             except:
                 pass
-my_bot = InstaBot('roi.carmona', 'R1604200101c')
+my_bot = InstaBot('Your username','Your password')#enter your name and password here!
 my_bot.get_unfollowers()
 my_bot.unfollow()
+
+#Made in python 3.9
